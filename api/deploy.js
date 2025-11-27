@@ -9,7 +9,7 @@ export default async function handler(req, res) {
       });
     }
 
-    const vercelRes = await fetch(nosauniverse-bgxd
+    const vercelRes = await fetch(nosauniverse-bgxd)
 
 , {
       method: "POST",
