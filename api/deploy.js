@@ -9,7 +9,9 @@ export default async function handler(req, res) {
       });
     }
 
-    const vercelRes = await fetch(hook, {
+    const vercelRes = await fetch(nosauniverse-bgxd
+
+, {
       method: "POST",
       headers: { "Content-Type": "application/json" }
     });
