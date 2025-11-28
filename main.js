@@ -1,30 +1,26 @@
+async function runNova() {
+  const output = document.getElementById("statusOutput");
+  output.textContent = "Contacting Nova Engine…";
+
+  try {
+    const res = await fetch("/api/deploy", { method: "POST" });
+    const data = await res.json().catch(() => ({}));
+
+    if (res.ok && data.ok) {
+      output.textContent =
+        "✅ Deploy triggered.\n\n" +
+        JSON.stringify(data, null, 2);
+    } else {
+      output.textContent =
+        "⚠️ Deploy call returned an error.\n\n" +
+        JSON.stringify(data, null, 2);
+    }
+  } catch (err) {
+    output.textContent = "❌ Nova Engine error: " + err.message;
+  }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   const btn = document.getElementById("novaButton");
-  const status = document.getElementById("status");
-
-  if (!btn) return;
-
-  btn.addEventListener("click", async () => {
-    status.textContent = "Nova: sending deploy signal...";
-    btn.disabled = true;
-
-    try {
-      const res = await fetch("/api/deploy", { method: "POST" });
-      const data = await res.json();
-
-      if (data.ok) {
-        status.textContent = "Nova: deploy triggered successfully via Vercel.";
-        alert(JSON.stringify(data));
-      } else {
-        status.textContent = "Nova: deploy failed — check logs.";
-        alert("Deploy error: " + (data.error || "unknown"));
-      }
-    } catch (err) {
-      console.error(err);
-      status.textContent = "Nova: something went wrong talking to the API.";
-      alert("Request failed: " + err.message);
-    } finally {
-      btn.disabled = false;
-    }
-  });
+  btn.addEventListener("click", runNova);
 });
