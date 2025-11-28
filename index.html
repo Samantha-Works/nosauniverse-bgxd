@@ -2,20 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Nova Engine — Samantha SuperNova Universe</title>
+  <title>Nova Engine — Nosa Universe</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="/styles.css" />
 </head>
 <body>
-  <main class="shell">
+  <main class="app">
     <h1>Nova Engine Activated</h1>
-    <p class="tagline">When you press the button, Nova triggers a fresh deploy from this dashboard.</p>
+    <p class="sub">Press the button below to trigger a safe Vercel deploy.</p>
 
     <button id="novaButton">Run Nova</button>
 
-    <div id="status" class="status"></div>
+    <section class="status-panel">
+      <h2>Status</h2>
+      <pre id="statusOutput">Waiting for command…</pre>
+    </section>
   </main>
 
   <script src="/main.js"></script>
 </body>
 </html>
+
