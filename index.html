@@ -2,24 +2,165 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Nova Engine — Nosa Universe</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Samantha SuperNova Universe — Command Deck</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <link rel="stylesheet" href="/styles.css" />
 </head>
 <body>
-  <main class="app">
-    <h1>Nova Engine Activated</h1>
-    <p class="sub">Press the button below to trigger a safe Vercel deploy.</p>
+  <header class="topbar">
+    <div class="brand">
+      <div class="orb"></div>
+      <div>
+        <h1>Samantha’s SuperNova Universe</h1>
+        <p class="sub">Mission Control • Nova + Nosa Command Deck</p>
+      </div>
+    </div>
 
-    <button id="novaButton">Run Nova</button>
+    <div class="top-actions">
+      <span class="env-pill">Environment: <strong>Space Mission</strong></span>
+      <button id="novaButton" class="nova-btn">🚀 Launch & Deploy</button>
+    </div>
+  </header>
 
-    <section class="status-panel">
-      <h2>Status</h2>
-      <pre id="statusOutput">Waiting for command…</pre>
+  <main class="layout">
+    <!-- Universe System Map -->
+    <section class="panel system-map">
+      <h2>Universe System Map</h2>
+      <p class="tiny">Live overview of your active worlds and portals.</p>
+
+      <div class="map-row">
+        <div class="map-orb-wrap">
+          <div class="map-orb">
+            <div class="map-orb-core"></div>
+          </div>
+          <p class="map-label">Your Core Universe</p>
+        </div>
+
+        <div class="map-stats">
+          <div class="stat-pill">
+            <span class="label">Active Worlds</span>
+            <span class="value" id="statWorlds">4</span>
+          </div>
+          <div class="stat-pill">
+            <span class="label">Pending Obstacles</span>
+            <span class="value" id="statObstacles">3</span>
+          </div>
+          <div class="stat-pill">
+            <span class="label">Deploy Ready</span>
+            <span class="value" id="statReady">2</span>
+          </div>
+          <div class="stat-pill">
+            <span class="label">Systems Stable</span>
+            <span class="value green">✔</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="kpi-bars">
+        <div class="kpi-row">
+          <span>Dashboard Build</span>
+          <div class="kpi-bar"><div style="width:72%"></div></div>
+          <span class="kpi-val">72%</span>
+        </div>
+        <div class="kpi-row">
+          <span>Nosa Readiness</span>
+          <div class="kpi-bar danger"><div style="width:41%"></div></div>
+          <span class="kpi-val">41%</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portals -->
+    <section class="panel portals">
+      <h2>Universe Portals</h2>
+      <p class="tiny">Jump into any world with a single click.</p>
+
+      <div class="portal-grid">
+        <button class="portal-card">
+          <h3>Game Hub</h3>
+          <p>Design & launch games.</p>
+        </button>
+        <button class="portal-card">
+          <h3>CineVerse Creator</h3>
+          <p>Scenes, timelines, storyboards.</p>
+        </button>
+        <button class="portal-card">
+          <h3>AceMyBusiness</h3>
+          <p>Business systems control deck.</p>
+        </button>
+        <button class="portal-card">
+          <h3>AceMyCert</h3>
+          <p>Certification prep engine.</p>
+        </button>
+        <button class="portal-card">
+          <h3>Marketplace</h3>
+          <p>Add-ons, packs, upgrades.</p>
+        </button>
+        <button class="portal-card">
+          <h3>Transform Engine</h3>
+          <p>Mission-based workforce engine.</p>
+        </button>
+      </div>
+    </section>
+
+    <!-- AI Panels -->
+    <section class="panel ai-stack">
+      <div class="ai-card">
+        <header>
+          <span class="title">Primary AI</span>
+          <span class="name">Nova</span>
+        </header>
+        <p class="tiny">Universe architect & deploy-ready engine.</p>
+        <div class="meter-row">
+          <span>Focus</span>
+          <div class="meter"><div id="novaFocus" style="width:88%"></div></div>
+          <span class="meter-val">88%</span>
+        </div>
+      </div>
+
+      <div class="ai-card">
+        <header>
+          <span class="title">Advisor AI</span>
+          <span class="name danger">Nosa</span>
+        </header>
+        <p class="tiny">Risk guard, rule matrix, “no going rogue” sentinel.</p>
+        <div class="meter-row">
+          <span>Trust Calibration</span>
+          <div class="meter danger"><div id="nosaTrust" style="width:32%"></div></div>
+          <span class="meter-val">Lv. 1</span>
+        </div>
+      </div>
+
+      <div class="ai-card">
+        <header>
+          <span class="title">Deploy Status</span>
+          <span class="name">System</span>
+        </header>
+        <p class="tiny">Shows the last Nova button run.</p>
+        <div class="status-pill" id="deployStatus">Idle • Waiting for command…</div>
+      </div>
+    </section>
+
+    <!-- Mission Log -->
+    <section class="panel mission-log">
+      <header class="mission-header">
+        <div>
+          <h2>Mission Log</h2>
+          <p class="tiny">Real-time stream of Nova + Nosa activity.</p>
+        </div>
+        <div class="mission-actions">
+          <button id="simulateBtn" class="chip">Simulate Activity</button>
+          <button id="clearLogBtn" class="chip ghost">Clear</button>
+        </div>
+      </header>
+
+      <pre id="logConsole" class="log-console">
+[00:00:00] [SYSTEM] READY Samantha’s SuperNova Command Deck online.
+[00:00:01] [NOVA]   Awaiting first Launch & Deploy command…
+      </pre>
     </section>
   </main>
 
-  <script src="/main.js"></script>
+  <script src="/main.js" type="module"></script>
 </body>
 </html>
-
