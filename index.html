@@ -1,17 +1,111 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Nova Engine Activated</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8" />
+  <title>Samantha’s SuperNova Universe — Command Deck</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/styles.css" />
 </head>
 
 <body>
 
-<h1>Nova Engine Activated</h1>
+<header class="topbar">
+  <div class="brand">
+    <div class="orb"></div>
+    <div>
+      <h1>Samantha’s SuperNova Universe</h1>
+      <p class="sub">Mission Control • Nova + Nosa Command Deck</p>
+    </div>
+  </div>
 
-<button id="runNova">Run Nova</button>
+  <div class="top-actions">
+    <span class="env-pill">Environment: <strong>Production</strong></span>
+    <button id="runNova" class="nova-btn">🚀 Launch & Deploy</button>
+  </div>
+</header>
 
-<script src="main.js"></script>
+<main class="layout">
 
+  <!-- UNIVERSE MAP -->
+  <section class="panel system-map">
+    <h2>Universe System Map</h2>
+    <p class="tiny">Live overview of your active worlds and portals.</p>
+
+    <div class="map-row">
+      <div class="map-orb-wrap">
+        <div class="map-orb">
+          <div class="map-orb-core"></div>
+        </div>
+        <p class="map-label">Core Universe</p>
+      </div>
+
+      <div class="map-stats">
+        <div class="stat-pill"><span class="label">Active Worlds</span><span class="value">4</span></div>
+        <div class="stat-pill"><span class="label">Pending Obstacles</span><span class="value">3</span></div>
+        <div class="stat-pill"><span class="label">Deploy Ready</span><span class="value">2</span></div>
+        <div class="stat-pill"><span class="label">Systems Stable</span><span class="value green">✔</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTALS -->
+  <section class="panel portals">
+    <h2>Universe Portals</h2>
+    <p class="tiny">Jump into any world with a single click.</p>
+
+    <div class="portal-grid">
+      <button class="portal-card"><h3>Game Hub</h3><p>Design & launch games.</p></button>
+      <button class="portal-card"><h3>CineVerse Creator</h3><p>Scenes, timelines, storyboards.</p></button>
+      <button class="portal-card"><h3>AceMyBusiness</h3><p>Business control deck.</p></button>
+      <button class="portal-card"><h3>AceMyCert</h3><p>Certification prep engine.</p></button>
+      <button class="portal-card"><h3>Marketplace</h3><p>Add-ons & packs.</p></button>
+      <button class="portal-card"><h3>Transform Engine</h3><p>Workforce mission engine.</p></button>
+    </div>
+  </section>
+
+  <!-- AI STACK -->
+  <section class="panel ai-stack">
+
+    <div class="ai-card">
+      <header><span class="title">Primary AI</span><span class="name">Nova</span></header>
+      <p class="tiny">Universe architect & deploy engine.</p>
+      <div class="meter-row"><span>Focus</span>
+        <div class="meter"><div style="width:88%"></div></div>
+        <span class="meter-val">88%</span>
+      </div>
+    </div>
+
+    <div class="ai-card">
+      <header><span class="title">Advisor AI</span><span class="name danger">Nosa</span></header>
+      <p class="tiny">Rule-matrix guardian. “No rogue.”</p>
+      <div class="meter-row"><span>Nosa Trust</span>
+        <div class="meter danger"><div style="width:35%"></div></div>
+        <span class="meter-val">Lv. 1</span>
+      </div>
+    </div>
+
+    <div class="ai-card">
+      <header><span class="title">Deploy Status</span><span class="name">System</span></header>
+      <p id="deployStatus" class="status-pill">Idle • Waiting for command…</p>
+    </div>
+
+  </section>
+
+  <!-- MISSION LOG -->
+  <section class="panel mission-log">
+    <header class="mission-header">
+      <div><h2>Mission Log</h2><p class="tiny">Real-time Nova + Nosa events.</p></div>
+      <button id="clearLogBtn" class="chip ghost">Clear</button>
+    </header>
+
+    <pre id="logConsole" class="log-console">
+[00:00:00] [SYSTEM] READY SuperNova Command Deck online.
+[00:00:01] [NOVA]   Awaiting first deploy…
+    </pre>
+  </section>
+
+</main>
+
+<script src="/main.js" type="module"></script>
 </body>
 </html>
