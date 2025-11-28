@@ -1,16 +1,99 @@
-body {
-  font-family: Arial, sans-serif;
-  background: #111;
-  color: white;
-  padding: 40px;
+/* GLOBAL */
+:root {
+  --bg: #050818;
+  --panel: #11162b;
+  --border: rgba(255,255,255,0.05);
+  --text: #f5f7ff;
+  --muted: #9ba3c7;
+  --danger: #ff5b8f;
+  --accent: #4cd5ff;
 }
 
-button {
-  padding: 12px 28px;
-  font-size: 18px;
-  background: #4e8cff;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
+body {
+  margin:0;
+  background: radial-gradient(circle at top left, #18345a, #050818);
+  font-family: system-ui;
+  color: var(--text);
+}
+
+/* TOPBAR */
+.topbar {
+  display:flex;
+  justify-content:space-between;
+  padding:18px 32px;
+  backdrop-filter:blur(18px);
+  background:rgba(0,0,0,0.25);
+  border-bottom:1px solid var(--border);
+}
+
+.brand {display:flex; gap:14px; align-items:center;}
+.orb {
+  width:32px;height:32px;border-radius:50%;
+  background: radial-gradient(#ffe9ff,#ff3fd7,#b300ff);
+  box-shadow:0 0 18px #ff47dd;
+}
+
+.sub {font-size:0.75rem;color:var(--muted);margin:0;}
+
+.nova-btn {
+  background:linear-gradient(90deg,#4cd5ff,#2a7cff);
+  padding:10px 22px;
+  color:#000;
+  font-weight:600;
+  border:none;
+  border-radius:30px;
+  cursor:pointer;
+}
+
+/* LAYOUT */
+.layout {
+  padding:22px;
+  display:grid;
+  grid-template-columns:2fr 1.5fr;
+  gap:18px;
+}
+
+.panel {
+  background:var(--panel);
+  border-radius:20px;
+  padding:18px;
+  border:1px solid var(--border);
+}
+
+.tiny {color:var(--muted);font-size:0.8rem}
+
+/* PORTALS */
+.portal-grid {
+  margin-top:16px;
+  display:grid; grid-template-columns:1fr 1fr; gap:10px;
+}
+.portal-card {
+  background:#0b1020;
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:14px;
+  text-align:left;
+}
+
+/* AI CARDS */
+.ai-card {
+  background:#0c1228;
+  border-radius:16px;
+  padding:16px;
+  border:1px solid var(--border);
+}
+
+.meter {background:#1d2342;border-radius:12px;height:6px;overflow:hidden;}
+.meter>div {background:var(--accent);height:100%;}
+.meter.danger>div {background:var(--danger);}
+
+/* MISSION LOG */
+.log-console {
+  background:#000;
+  color:#00d0ff;
+  padding:12px;
+  border-radius:12px;
+  height:220px;
+  overflow-y:auto;
+  font-size:0.78rem;
 }
