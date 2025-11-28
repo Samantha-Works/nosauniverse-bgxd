@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 2.0.0,
   "routes": [
     { "src": "/api/(.*)", "dest": "/api/$1.js" },
     { "src": "/(.*)", "dest": "/index.html" }
