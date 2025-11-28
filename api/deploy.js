@@ -5,16 +5,24 @@ export default async function handler(req, res) {
     if (!hook) {
       return res.status(500).json({
         ok: false,
-        error: "VERCEL_DEPLOY_HOOK is missing"
+        error: "Missing VERCEL_DEPLOY_HOOK"
       });
     }
 
-    const vercelRes = await fetch(hook, { method: "POST" });
+    // Accept GET or POST
+    if (req.method !== "GET" && req.method !== "POST") {
+      return res.status(405).json({
+        ok: false,
+        error: "Method not allowed"
+      });
+    }
+
+    // Trigger deploy
+    await fetch(hook, { method: "POST" });
 
     return res.status(200).json({
       ok: true,
-      status: vercelRes.status,
-      message: "Nova deploy triggered successfully."
+      message: "Nova: deploy triggered"
     });
 
   } catch (err) {
