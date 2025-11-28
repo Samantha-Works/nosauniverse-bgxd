@@ -1,8 +1,9 @@
+// api/status.js
 export default function handler(req, res) {
   res.status(200).json({
     ok: true,
-    engine: "Nova",
-    mode: "deploy-only",
-    time: new Date().toISOString(),
+    universe: "Samantha-SuperNova",
+    environment: process.env.VERCEL_ENV || "production",
+    timestamp: new Date().toISOString(),
   });
 }
