@@ -9,7 +9,7 @@ export default async function handler(req, res) {
       });
     }
 
-    const vercelRes = await fetch(hook, { method: "POST" });
+    const vercelRes = await fetch(VERCEL_DEPLOY_HOOK, { method: "POST" });
 
     return res.status(200).json({
       ok: true,
